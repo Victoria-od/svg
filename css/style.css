@@ -1,0 +1,35 @@
+BODY {
+  background: #111;
+  padding: 0;
+  margin: 0;
+  }
+DIV {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 350px;
+  height: 350px;
+  margin: auto;
+}
+
+.g-circles circle {
+  transform-origin: 120px 120px;
+  transform: rotate(0);
+}
+.g-circles circle {
+  animation: rotation 4s infinite alternate;
+}
+
+@for $i from 2 through 15 {
+  .g-circles circle:nth-child(#{$i}){
+    animation-delay: #{$i/4}s;
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
